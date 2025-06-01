@@ -1,0 +1,80 @@
+{
+    "name": "memorable-ids",
+    "version": "0.1.0",
+    "description": "A flexible library for generating human-readable, memorable identifiers",
+    "author": "Aris Ripandi <aris@duck.com>",
+    "license": "MIT",
+    "type": "module",
+    "main": "dist/index.mjs",
+    "types": "dist/index.d.mts",
+    "scripts": {
+        "build": "unbuild",
+        "format": "biome format . --write",
+        "lint": "biome lint . --write",
+        "check": "biome check . --write",
+        "cleanup": "pnpm dlx rimraf dist node_modules",
+        "prepublishOnly": "pnpm run build && pnpm test",
+        "postinstall": "pnpm approve-builds",
+        "test": "node --no-warnings --test --loader ts-node/esm src/**/*.test.ts",
+        "test:watch": "node --no-warnings --test --watch --loader ts-node/esm src/**/*.test.ts",
+        "test:coverage": "c8 node --no-warnings --test --loader ts-node/esm src/**/*.test.ts",
+        "typecheck": "tsc --noEmit"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "1.9.4",
+        "@types/node": "22.15.29",
+        "c8": "10.1.3",
+        "ts-node": "10.9.2",
+        "typescript": "5.8.3",
+        "unbuild": "3.5.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "packageManager": "pnpm@10.11.0",
+    "pnpm": {
+        "onlyBuiltDependencies": ["@biomejs/biome", "esbuild"]
+    },
+    "exports": {
+        ".": {
+            "import": "./dist/index.mjs",
+            "types": "./dist/index.d.mts"
+        },
+        "./dictionary": {
+            "import": "./dist/dictionary.mjs",
+            "types": "./dist/dictionary.d.mts"
+        }
+    },
+    "files": [
+        "dist/**/*",
+        "!tests/**/*",
+        "!dist/**/*.*.map",
+        "!tests/**/*.*.map",
+        "package.json",
+        "README.md",
+        "LICENSE"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/riipandi/memorable-ids.git"
+    },
+    "bugs": {
+        "url": "https://github.com/riipandi/memorable-ids/issues"
+    },
+    "homepage": "https://github.com/riipandi/memorable-ids#readme",
+    "keywords": [
+        "hri",
+        "human",
+        "ids",
+        "memorable",
+        "readable",
+        "unique",
+        "identifier",
+        "generator",
+        "typescript",
+        "human-readable"
+    ]
+}
