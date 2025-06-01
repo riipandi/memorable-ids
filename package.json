@@ -1,6 +1,6 @@
 {
     "name": "memorable-ids",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "A flexible library for generating human-readable, memorable identifiers",
     "author": "Aris Ripandi <aris@duck.com>",
     "license": "MIT",
@@ -15,6 +15,8 @@
         "cleanup": "pnpm dlx rimraf dist node_modules",
         "prepublishOnly": "pnpm run build && pnpm test",
         "postinstall": "pnpm approve-builds",
+        "publish:jsr": "pnpm dlx jsr publish --allow-dirty",
+        "release": "pnpm publish --no-git-checks && pnpm publish:jsr",
         "test": "node --no-warnings --test --loader ts-node/esm src/**/*.test.ts",
         "test:watch": "node --no-warnings --test --watch --loader ts-node/esm src/**/*.test.ts",
         "test:coverage": "c8 node --no-warnings --test --loader ts-node/esm src/**/*.test.ts",
@@ -65,16 +67,5 @@
         "url": "https://github.com/riipandi/memorable-ids/issues"
     },
     "homepage": "https://github.com/riipandi/memorable-ids#readme",
-    "keywords": [
-        "hri",
-        "human",
-        "ids",
-        "memorable",
-        "readable",
-        "unique",
-        "identifier",
-        "generator",
-        "typescript",
-        "human-readable"
-    ]
+    "keywords": ["hri", "human-readable", "identifier", "ids", "memorable", "readable", "unique"]
 }

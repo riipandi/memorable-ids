@@ -3,9 +3,11 @@
 A flexible TypeScript library for generating human-readable, memorable identifiers.
 Uses combinations of adjectives, nouns, verbs, adverbs, and prepositions with optional numeric/custom suffixes.
 
+**Compatibility**: ESM-only.
+
 ## Features
 
-- 🎯 **Human-readable** - Generate IDs like `cute-rabbit`, `brave-fox-swim`, `quick-owl-dance-quietly`
+- 🎯 **Human-readable** - Generate IDs like `cute-rabbit`, `quick-owl-dance-quietly`, etc
 - 🔧 **Flexible** - 1-5 word components with customizable separators
 - 📊 **Predictable** - Built-in collision analysis and capacity planning
 - 🎲 **Extensible** - Custom suffix generators and vocabulary
